@@ -8,8 +8,11 @@ import com.renarosantos.ecommerceapp.databinding.ProductCardBinding
 
 class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
 
+    private var data : List<ProductCardViewState>
 
-    private var data: List<ProductCardViewState> = emptyList()
+    init {
+        data = emptyList()
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
