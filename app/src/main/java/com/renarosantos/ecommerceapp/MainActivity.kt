@@ -1,8 +1,7 @@
 package com.renarosantos.ecommerceapp
 
 import android.os.Bundle
-import android.view.View
-import androidx.annotation.NonNull
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val productViewModel : ProductListViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -22,11 +23,11 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = binding.viewProductList
         recyclerView.layoutManager= LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = adapter
-        updateUI(ProductListViewState.Content((1..5).map {
-            ProductCardViewState("Playstation $it", "This is a nice console! Check it out", "${200 * it} US$")
-        }))
-//        updateUI(ProductListViewState.Loading)
-//        updateUI(ProductListViewState.Error("Something went wrong"))
+
+        // observe the live data
+        productViewModel.viewState.observe(this) { viewState ->
+            updateUI(viewState)
+        }
     }
 
     private fun updateUI(viewState : ProductListViewState) {
