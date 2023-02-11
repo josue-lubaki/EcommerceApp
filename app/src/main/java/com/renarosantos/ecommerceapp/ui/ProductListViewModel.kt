@@ -4,16 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.renarosantos.ecommerceapp.data.repo.ProductRepositoryImpl
+import com.renarosantos.ecommerceapp.domain.repo.ProductRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductListViewModel : ViewModel() {
+@HiltViewModel
+class ProductListViewModel @Inject constructor(private val repository : ProductRepository) : ViewModel() {
 
     private var _viewState = MutableLiveData<ProductListViewState>()
     val viewState : LiveData<ProductListViewState> = _viewState
-
-    private val repository = ProductRepositoryImpl()
 
     init {
         loadProductList()

@@ -2,6 +2,17 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.dagger.hilt.android'
+    id "androidx.navigation.safeargs"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'build/generated/source/navigation-args'
+        }
+    }
 }
 
 android {
@@ -10,7 +21,7 @@ android {
     defaultConfig {
         applicationId "com.renarosantos.ecommerceapp"
         minSdk 24
-        targetSdk 33
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -37,11 +48,6 @@ android {
 
 dependencies {
 
-    def room_version = '2.4.0'
-    def retrofit_version = "2.9.0"
-    def glide_version = "4.12.0"
-    def lifecycle_version = "2.5.1"
-
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
@@ -60,7 +66,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$glide_version"
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
-    // Retrofit & OkHttp & Gson
+    // Retrofit & Gson
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
@@ -71,6 +77,26 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
-    implementation "androidx.room:room-paging:$room_version"
 
+    // navigation Component
+//    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+//    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    // Navigation Component
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+
+    // Hilt Dependency Injection
+    implementation "com.google.dagger:hilt-android:$dagger_version"
+    implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0'
+    kapt "com.google.dagger:hilt-compiler:$dagger_version"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
+
+
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+}
+
+kapt {
+    correctErrorTypes true
 }
