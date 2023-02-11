@@ -25,7 +25,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="fitXY"
-            android:background="#bababa" />
+            android:background="#bababa"
+            android:contentDescription="@string/image_product" />
 
         <TextView
             android:id="@+id/viewProductName"
@@ -33,10 +34,11 @@
             app:layout_constraintTop_toTopOf="@id/productImage"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="8dp"
+            android:textSize="20sp"
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Playstation 5" />
+            android:text="@string/playstation_title" />
 
         <TextView
             android:id="@+id/viewProductDescription"
@@ -48,7 +50,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="With the new Playstation 5 you can play the most awesome games non-stop! Make sure to pre-order!" />
+            android:textSize="16sp"
+            android:text="@string/description_product" />
 
 
         <TextView
@@ -63,7 +66,7 @@
             android:layout_marginEnd="12dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-medium"
-            android:text="$599,99"
+            android:text="@string/price"
             />
 
         <Button
@@ -78,7 +81,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            android:text="Buy it!"
+            android:text="@string/buy_it"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

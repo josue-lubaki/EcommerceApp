@@ -1,10 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">E-commerce App</string>
     <string name="description_product">With the new Playstation 5 you can play the most awesome games non-stop! Make sure to pre-order!</string>
     <string name="playstation_title">Playstation 5</string>
     <string name="price">$599,99</string>
     <string name="buy_it">Buy it!</string>
     <string name="image_product">image product</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

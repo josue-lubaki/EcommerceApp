@@ -1,17 +1,16 @@
 package com.renarosantos.ecommerceapp.data.repo
 
-import com.renarosantos.ecommerceapp.data.remote.ApiClient
+import com.renarosantos.ecommerceapp.data.remote.ProductService
+import com.renarosantos.ecommerceapp.domain.repo.ProductRepository
 import com.renarosantos.ecommerceapp.ui.ProductCardViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class ProductRepositoryImpl {
+class ProductRepositoryImpl(private val service : ProductService) : ProductRepository {
 
-    private val client = ApiClient().getClient()
-
-    suspend fun getProductList(): List<ProductCardViewState> {
+    override suspend fun getProductList(): List<ProductCardViewState> {
         return withContext(Dispatchers.IO) {
-            client.getProductList().map {
+            service.getProductList().map {
                 ProductCardViewState(
                     title = it.title,
                     description = it.description,
