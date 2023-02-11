@@ -1,14 +1,16 @@
 package com.renarosantos.ecommerceapp.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.renarosantos.ecommerceapp.R
 import com.renarosantos.ecommerceapp.databinding.ProductListFragmentBinding
 import com.renarosantos.ecommerceapp.ui.ProductCardListAdapter
 import com.renarosantos.ecommerceapp.ui.ProductCardViewState
@@ -26,7 +28,7 @@ class ProductListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = ProductListFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -68,6 +70,8 @@ class ProductListFragment : Fragment() {
 
     // parameter just to show how to retrieve data from Adapter to the fragment
     private fun onItemClicked(viewState: ProductCardViewState) {
-        findNavController().navigate(ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment())
+        // pass the product to the details fragment
+        val bundle = bundleOf("product" to viewState)
+        findNavController().navigate(R.id.action_productListFragment_to_productDetailsFragment, bundle)
     }
 }
