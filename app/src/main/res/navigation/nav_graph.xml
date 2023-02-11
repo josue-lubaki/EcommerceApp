@@ -17,5 +17,6 @@
     <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.renarosantos.ecommerceapp.view.ProductDetailsFragment"
-        android:label="ProductDetailsFragment" />
+        android:label="ProductDetailsFragment" >
+    </fragment>
 </navigation>
