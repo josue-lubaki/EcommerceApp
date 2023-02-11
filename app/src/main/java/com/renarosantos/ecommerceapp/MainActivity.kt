@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.renarosantos.ecommerceapp.databinding.ActivityMainBinding
+import com.renarosantos.ecommerceapp.ui.ProductCardListAdapter
+import com.renarosantos.ecommerceapp.ui.ProductListViewModel
+import com.renarosantos.ecommerceapp.ui.ProductListViewState
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI(viewState : ProductListViewState) {
         when(viewState){
             is ProductListViewState.Content -> {
+                binding.viewProductList.isVisible = true
                 binding.errorView.isVisible = false
                 binding.errorText.isVisible = false
                 binding.loadingView.isVisible = false

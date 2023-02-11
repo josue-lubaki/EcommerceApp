@@ -37,6 +37,9 @@ android {
 
 dependencies {
 
+    def room_version = '2.4.0'
+    def retrofit_version = "2.9.0"
+
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
@@ -50,5 +53,22 @@ dependencies {
     // lifecycle dependencies
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+
+    // Retrofit & OkHttp & Gson
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
+
+    // okHttp logging interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-paging:$room_version"
 
 }
