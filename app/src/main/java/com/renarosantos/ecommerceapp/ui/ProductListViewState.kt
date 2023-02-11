@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp
+package com.renarosantos.ecommerceapp.ui
 
 sealed class ProductListViewState {
     object Loading : ProductListViewState()
