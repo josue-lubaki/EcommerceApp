@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -69,9 +70,8 @@ class ProductListFragment : Fragment() {
 
     // parameter just to show how to retrieve data from Adapter to the fragment
     private fun onItemClicked(viewState: ProductCardViewState) {
-        // pass the viewState to the next fragment
-        val bundle = Bundle()
-        bundle.putSerializable("product", viewState)
+        // pass the product to the details fragment
+        val bundle = bundleOf("product" to viewState)
         findNavController().navigate(R.id.action_productListFragment_to_productDetailsFragment, bundle)
     }
 }
