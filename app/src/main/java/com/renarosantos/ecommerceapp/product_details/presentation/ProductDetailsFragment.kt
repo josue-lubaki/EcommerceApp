@@ -1,7 +1,6 @@
-package com.renarosantos.ecommerceapp.presentation.view
+package com.renarosantos.ecommerceapp.product_details.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.renarosantos.ecommerceapp.databinding.FragmentProductDetailsBinding
-import com.renarosantos.ecommerceapp.presentation.ProductDetailsViewModel
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductDetailsViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
