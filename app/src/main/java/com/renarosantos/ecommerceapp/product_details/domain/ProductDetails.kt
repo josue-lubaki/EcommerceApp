@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.domain.model
+package com.renarosantos.ecommerceapp.product_details.domain
 
 data class ProductDetails(
     val id : String,

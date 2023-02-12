@@ -1,6 +1,6 @@
 package com.renarosantos.ecommerceapp.di
 
-import com.renarosantos.ecommerceapp.data.remote.ProductService
+import com.renarosantos.ecommerceapp.shared.data.repository.remote.ProductService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

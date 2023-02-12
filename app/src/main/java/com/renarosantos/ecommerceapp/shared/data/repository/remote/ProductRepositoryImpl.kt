@@ -1,9 +1,8 @@
-package com.renarosantos.ecommerceapp.data.repo
+package com.renarosantos.ecommerceapp.shared.data.repository.remote
 
-import com.renarosantos.ecommerceapp.data.remote.ProductService
-import com.renarosantos.ecommerceapp.domain.model.Product
-import com.renarosantos.ecommerceapp.domain.model.ProductDetails
-import com.renarosantos.ecommerceapp.domain.repo.ProductRepository
+import com.renarosantos.ecommerceapp.product_list.domain.Product
+import com.renarosantos.ecommerceapp.product_details.domain.ProductDetails
+import com.renarosantos.ecommerceapp.shared.data.repository.ProductRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
