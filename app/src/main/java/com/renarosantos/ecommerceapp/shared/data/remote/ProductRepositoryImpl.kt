@@ -5,8 +5,11 @@ import com.renarosantos.ecommerceapp.product_details.domain.ProductDetails
 import com.renarosantos.ecommerceapp.shared.data.repository.ProductRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class ProductRepositoryImpl(private val service : ProductService) : ProductRepository {
+class ProductRepositoryImpl @Inject constructor(
+    private val service : ProductService
+) : ProductRepository {
 
     override suspend fun getProductList(): List<Product> {
         return withContext(Dispatchers.IO) {
