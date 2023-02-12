@@ -55,6 +55,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
@@ -64,7 +66,7 @@ dependencies {
 
     // Glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     // Retrofit & Gson
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -78,10 +80,6 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
-    // navigation Component
-//    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-//    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
-
     // Navigation Component
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
@@ -93,6 +91,8 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:1.0.0"
     kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
 
+    testImplementation "io.mockk:mockk:1.13.4"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
 
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 }

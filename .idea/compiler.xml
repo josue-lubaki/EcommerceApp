@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="C:/Gradle/gradle-6.5/caches/modules-2/files-2.1/com.github.bumptech.glide/compiler/4.14.2/7e21631b9e1c3311655f53a8a456c4f4be75f104/compiler-4.14.2.jar" />
-          <entry name="C:/Gradle/gradle-6.5/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.14.2/57e84ef841035701766b7d74236d04c65cfa4248/annotations-4.14.2.jar" />
-        </processorPath>
-        <module name="E-commerce_App.app.main" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel target="11" />
   </component>
 </project>
