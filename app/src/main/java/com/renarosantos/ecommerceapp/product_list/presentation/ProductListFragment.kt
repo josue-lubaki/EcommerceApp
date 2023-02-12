@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProductListFragment : Fragment() {
     private lateinit var binding: ProductListFragmentBinding
     private val viewModel: ProductListViewModel by viewModels()
-    private val adapter = ProductCardListAdapter(::onItemClicked)
+    private val adapter = ProductCardListAdapter(::onItemClicked, ::onFavoriteIconClicked)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -69,5 +69,9 @@ class ProductListFragment : Fragment() {
         // pass the product to the details fragment
         val bundle = bundleOf("productId" to viewState.id)
         findNavController().navigate(R.id.action_productListFragment_to_productDetailsFragment, bundle)
+    }
+
+    private fun onFavoriteIconClicked(viewState: ProductCardViewState){
+        viewModel.favoriteIconClicked(viewState.id)
     }
 }

@@ -3,7 +3,7 @@ package com.renarosantos.ecommerceapp.di
 import android.content.Context
 import androidx.room.Room
 import com.renarosantos.ecommerceapp.shared.data.local.EcommerceDatabase
-import com.renarosantos.ecommerceapp.shared.data.local.WishlistDao
+import com.renarosantos.ecommerceapp.product_list.data.local.WishlistDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

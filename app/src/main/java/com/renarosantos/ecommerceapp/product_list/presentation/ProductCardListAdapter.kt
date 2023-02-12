@@ -9,7 +9,10 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.renarosantos.ecommerceapp.R
 import com.renarosantos.ecommerceapp.databinding.ProductCardBinding
 
-class ProductCardListAdapter(val onItemClicked: (ProductCardViewState) -> Unit) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
+class ProductCardListAdapter(
+    val onItemClicked: (ProductCardViewState) -> Unit,
+    val onFavoriteIconClicked: (ProductCardViewState) -> Unit
+) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
 
     private var data : List<ProductCardViewState> = emptyList()
 
@@ -32,6 +35,7 @@ class ProductCardListAdapter(val onItemClicked: (ProductCardViewState) -> Unit) 
 
     fun setData(productList: List<ProductCardViewState>) {
         this.data = productList
+        notifyDataSetChanged()
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -44,6 +48,11 @@ class ProductCardListAdapter(val onItemClicked: (ProductCardViewState) -> Unit) 
                 viewProductName.text = productCardViewState.title
                 viewProductDescription.text = productCardViewState.description
                 productPrice.text = productCardViewState.price
+
+                // onClick on favorite icon
+                viewWishlistIcon.setOnClickListener {
+                    onFavoriteIconClicked(productCardViewState)
+                }
 
                 // icon
                 viewWishlistIcon.setImageResource(
