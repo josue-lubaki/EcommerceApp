@@ -17,7 +17,7 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context : Context) : EcommerceDatabase {
+    fun provideDatabase(context : Context) : EcommerceDatabase {
         return Room
             .databaseBuilder(
                 context,
