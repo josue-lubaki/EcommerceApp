@@ -23,14 +23,14 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideProductRepository(service : ProductService) : ProductRepository {
-        return ProductRepositoryImpl(service)
+    fun provideProductRepository(productRepositoryImpl : ProductRepositoryImpl) : ProductRepository {
+        return productRepositoryImpl
     }
 
     @Provides
     @Singleton
-    fun provideWishlistRepository(wishlistDao: WishlistDao) : WishlistRepository {
-        return WishlistRepositoryImpl(wishlistDao)
+    fun provideWishlistRepository(wishlistRepositoryImpl: WishlistRepositoryImpl) : WishlistRepository {
+        return wishlistRepositoryImpl
     }
 
     @Provides
