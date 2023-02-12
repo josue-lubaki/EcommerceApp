@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.shared.data.repository.remote
+package com.renarosantos.ecommerceapp.shared.data.remote
 
 import com.renarosantos.ecommerceapp.product_list.domain.Product
 import com.renarosantos.ecommerceapp.product_details.domain.ProductDetails
