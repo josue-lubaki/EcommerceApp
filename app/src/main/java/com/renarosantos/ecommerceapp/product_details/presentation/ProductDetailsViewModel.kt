@@ -1,10 +1,9 @@
-package com.renarosantos.ecommerceapp.presentation
+package com.renarosantos.ecommerceapp.product_details.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.renarosantos.ecommerceapp.domain.repo.ProductRepository
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductDetailsViewState
+import com.renarosantos.ecommerceapp.shared.data.repository.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

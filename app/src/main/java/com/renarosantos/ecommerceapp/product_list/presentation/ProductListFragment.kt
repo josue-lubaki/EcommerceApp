@@ -1,7 +1,6 @@
-package com.renarosantos.ecommerceapp.presentation.view
+package com.renarosantos.ecommerceapp.product_list.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,9 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.renarosantos.ecommerceapp.R
 import com.renarosantos.ecommerceapp.databinding.ProductListFragmentBinding
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductCardViewState
-import com.renarosantos.ecommerceapp.presentation.ProductListViewModel
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductListViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,12 +1,10 @@
-package com.renarosantos.ecommerceapp.presentation
+package com.renarosantos.ecommerceapp.product_list.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.renarosantos.ecommerceapp.domain.repo.ProductRepository
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductCardViewState
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductListViewState
+import com.renarosantos.ecommerceapp.shared.data.repository.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +26,8 @@ class ProductListViewModel @Inject constructor(private val repository : ProductR
 
             try {
                 val productList = repository.getProductList()
-                _viewState.postValue(ProductListViewState.Content(
+                _viewState.postValue(
+                    ProductListViewState.Content(
                     productList.map { product ->
                         ProductCardViewState(
                             id = product.id,

@@ -1,6 +1,6 @@
-package com.renarosantos.ecommerceapp.data.entities
+package com.renarosantos.ecommerceapp.product_list.domain
 
-data class ProductEntity(
+data class Product(
     val id : String,
     val title : String,
     val description : String,
