@@ -44,6 +44,16 @@ class ProductCardListAdapter(val onItemClicked: (ProductCardViewState) -> Unit) 
                 viewProductName.text = productCardViewState.title
                 viewProductDescription.text = productCardViewState.description
                 productPrice.text = productCardViewState.price
+
+                // icon
+                viewWishlistIcon.setImageResource(
+                    if (productCardViewState.isFavorite) {
+                        R.drawable.ic_baseline_favorite
+                    } else {
+                        R.drawable.ic_baseline_favorite_disabled
+                    }
+                )
+
                 Glide.with(productImage)
                     .asBitmap()
                     .load(productCardViewState.imageUrl)
