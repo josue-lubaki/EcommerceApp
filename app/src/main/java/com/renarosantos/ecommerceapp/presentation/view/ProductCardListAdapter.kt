@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.ui
+package com.renarosantos.ecommerceapp.presentation.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.renarosantos.ecommerceapp.R
 import com.renarosantos.ecommerceapp.databinding.ProductCardBinding
+import com.renarosantos.ecommerceapp.presentation.viewstate.ProductCardViewState
 
 class ProductCardListAdapter(val onItemClicked: (ProductCardViewState) -> Unit) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
 
