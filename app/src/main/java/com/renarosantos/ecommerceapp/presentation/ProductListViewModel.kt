@@ -1,10 +1,12 @@
-package com.renarosantos.ecommerceapp.ui
+package com.renarosantos.ecommerceapp.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.renarosantos.ecommerceapp.domain.repo.ProductRepository
+import com.renarosantos.ecommerceapp.presentation.viewstate.ProductCardViewState
+import com.renarosantos.ecommerceapp.presentation.viewstate.ProductListViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,7 +28,17 @@ class ProductListViewModel @Inject constructor(private val repository : ProductR
 
             try {
                 val productList = repository.getProductList()
-                _viewState.postValue(ProductListViewState.Content(productList))
+                _viewState.postValue(ProductListViewState.Content(
+                    productList.map { product ->
+                        ProductCardViewState(
+                            id = product.id,
+                            title = product.title,
+                            description = product.description,
+                            price = "${product.price} CAD",
+                            imageUrl = product.imageUrl
+                        )
+                    }
+                ))
             } catch (e: Exception) {
                 _viewState.postValue(ProductListViewState.Error(e.message ?: "Unknown error"))
             }

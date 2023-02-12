@@ -1,11 +1,6 @@
 package com.renarosantos.ecommerceapp.domain.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "product")
-data class ProductEntity(
-    @PrimaryKey(autoGenerate = true)
+data class Product(
     val id : String,
     val title : String,
     val description : String,

@@ -1,10 +1,9 @@
-package com.renarosantos.ecommerceapp.ui
-
-import java.io.Serializable
+package com.renarosantos.ecommerceapp.presentation.viewstate
 
 data class ProductCardViewState(
+    val id : String,
     val title : String,
     val description : String,
     val price : String,
     val imageUrl : String
-) : Serializable
+)
