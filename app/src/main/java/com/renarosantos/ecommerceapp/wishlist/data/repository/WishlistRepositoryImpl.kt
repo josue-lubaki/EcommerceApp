@@ -1,7 +1,7 @@
 package com.renarosantos.ecommerceapp.wishlist.data.repository
 
-import com.renarosantos.ecommerceapp.shared.data.local.FavoriteProductEntity
-import com.renarosantos.ecommerceapp.shared.data.local.WishlistDao
+import com.renarosantos.ecommerceapp.product_list.data.local.FavoriteProductEntity
+import com.renarosantos.ecommerceapp.product_list.data.local.WishlistDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
